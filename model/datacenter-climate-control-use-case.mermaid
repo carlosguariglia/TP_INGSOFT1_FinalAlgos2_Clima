@@ -1,0 +1,32 @@
+stateDiagram-v2
+    state "Administrador" as Admin
+    state "MS-Forecast" as MSF
+    
+    state "Registrar Temperatura Actual" as RegistroTempActual
+    state "Registrar Temperatura Histórica" as RegistroTempHistorico
+    state "Aumentar Temperatura" as AumentarTemp
+    state "Disminuir Temperatura" as DisminuirTemp
+    state "Registrar Humedad Actual" as RegistroHumActual
+    state "Registrar Humedad Histórica" as RegistroHumHistorico
+    state "Aumentar Humedad" as AumentarHum
+    state "Disminuir Humedad" as DisminuirHum
+    state "Consultar Temperatura" as ConsultaTemp
+    state "Consultar Humedad" as ConsultaHum
+
+    Admin --> RegistroTempActual
+    Admin --> RegistroTempHistorico
+    Admin --> AumentarTemp
+    Admin --> DisminuirTemp
+    Admin --> RegistroHumActual
+    Admin --> RegistroHumHistorico
+    Admin --> AumentarHum
+    Admin --> DisminuirHum
+    Admin --> ConsultaTemp
+    Admin --> ConsultaHum
+
+    AumentarTemp --> MSF
+    DisminuirTemp --> MSF
+    AumentarHum --> MSF
+    DisminuirHum --> MSF
+    ConsultaTemp --> MSF
+    ConsultaHum --> MSF
